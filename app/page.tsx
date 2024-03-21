@@ -1,113 +1,84 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FiAlignLeft, FiGift, FiPlayCircle } from "react-icons/fi";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <div className="max-w-lg mx-auto">
+      <section className="flex h-screen justify-center items-center font-semibold text-4xl">
+        <h1>mabica</h1>
+      </section>
+
+      <section className=" left-0 right-0 top-0 ">
+        <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
+          <button>
+            <FiAlignLeft className="text-2xl" />
+          </button>
+
+          <div className="flex gap-2">
+            <button>
+              <FiPlayCircle />
+            </button>
+            <Link href="/">
+              <FiGift />
+            </Link>
+          </div>
+        </nav>
+      </section>
+
+      <section className="pt-2 pb-5 px-[7%]" id="about us">
+        <h2 className="font-semibold text-xl mb-2">#AboutUs</h2>
+        <h3 className="font-semibold text-4xl">What Is Mabica?</h3>
+        <p className="font-normal text-sm">
+          Mabica (Mari Bikin Cerita) adalah perkumpulan orang gabut yang mungkin
+          membuat cerita supaya tidak {`"`}Rin udah makan{`"`} atau {`"`}sehat?
+          {`"`} saat bermain discord.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <button className="hover:bg-white hover:text-black transition border-black border  mx-auto bg-black mt-4 text-white rounded-tr-xl rounded-bl-xl m min-w-28 py-2 px-1">
+          More+
+        </button>
+      </section>
+
+      <section className="px-[7%] flex flex-col pt-5 pb-5 " id="team">
+        <h2 className="font-semibold text-xl text-right mb-2">#Team</h2>
+        <div className="grid grid-cols-3 gap-2">
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
         </div>
-      </div>
+        <button className="hover:bg-white hover:text-black duration-300 transition border-black border  mx-auto bg-black mt-4 text-white rounded-tr-xl rounded-bl-xl m min-w-28 py-2 px-1">
+          More+
+        </button>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="px-[7%] pb-5 pt-5 " id="social media">
+        <h2 className="font-semibold text-xl text-center mb-2">#Team</h2>
+        <div className="flex flex-col gap-1">
+          <button className="hover:bg-black hover:text-white text-black transition duration-300 w-full bg-white py-2 rounded-tr-lg rounded-bl-lg font-semibold text-l border-[1.5px] shadow border-black">
+            Spotify
+          </button>
+          <button className="hover:bg-black hover:text-white text-black transition duration-300 w-full bg-white py-2 rounded-tr-lg rounded-bl-lg font-semibold text-l border-[1.5px] shadow border-black">
+            Wattpad
+          </button>
+          <button className="hover:bg-black hover:text-white text-black transition duration-300 w-full bg-white py-2 rounded-tr-lg rounded-bl-lg font-semibold text-l border-[1.5px] shadow border-black">
+            Instagram
+          </button>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <footer className="px-[7%] text-center  pb-5 pt-5" id="footer">
+        <div className="space-x-1 text-black/90" id="footer">
+          <span>Informasi Bisnis</span>
+          <span>l</span>
+          <span>Kebijakan Privasi</span>
+        </div>
+        <span className="text-sm font-light text-black">
+          Copyright © 2024 Mabica
+        </span>
+      </footer>
+    </div>
   );
 }
