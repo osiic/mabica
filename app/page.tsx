@@ -1,32 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FiAlignLeft, FiGift, FiPlayCircle } from "react-icons/fi";
+import { Navbar } from "@/components/ui/navbar";
 
-export default function Home() {
+export default function PageHome() {
   return (
-    <div className="max-w-lg mx-auto">
-      <section className="flex h-screen justify-center items-center font-semibold text-4xl">
+    <div className="max-w-screen-md mx-auto">
+      <section className="flex h-[100dvh] justify-center items-center font-semibold text-4xl">
         <h1>mabica</h1>
       </section>
 
-      <section className=" left-0 right-0 top-0 ">
-        <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
-          <button>
-            <FiAlignLeft className="text-2xl" />
-          </button>
+      <Navbar />
 
-          <div className="flex gap-2">
-            <button>
-              <FiPlayCircle />
-            </button>
-            <Link href="/">
-              <FiGift />
-            </Link>
-          </div>
-        </nav>
-      </section>
-
-      <section className="pt-2 pb-5 px-[7%]" id="about us">
+      <section className="pt-2 pb-5 px-[7%]" id="about-us">
         <h2 className="font-semibold text-xl mb-2">#AboutUs</h2>
         <h3 className="font-semibold text-4xl">What Is Mabica?</h3>
         <p className="font-normal text-sm">
@@ -54,7 +37,7 @@ export default function Home() {
         </button>
       </section>
 
-      <section className="px-[7%] pb-5 pt-5 " id="social media">
+      <section className="px-[7%] pb-5 pt-5 " id="social-media">
         <h2 className="font-semibold text-xl text-center mb-2">#Team</h2>
         <div className="flex flex-col gap-1">
           <button className="hover:bg-black hover:text-white text-black transition duration-300 w-full bg-white py-2 rounded-tr-lg rounded-bl-lg font-semibold text-l border-[1.5px] shadow border-black">
