@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 export function Navbar() {
   const [navbar, setNavbar] = useState<boolean>(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   useEffect(() => {
     const newAudio = new Audio("/bgm.mp3");
@@ -26,7 +26,6 @@ export function Navbar() {
   useEffect(() => {
     if (isPlaying && audio) {
       if (audio !== null) {
-        audio.play();
         audio.volume = 0.4;
       }
     }
@@ -83,7 +82,10 @@ export function Navbar() {
           </button>
 
           <div className="flex gap-2">
-            <button onClick={playPause} className="animate-spin-slow text-xl">
+            <button
+              onClick={playPause}
+              className={`${isPlaying && "animate-spin-slow"} text-xl`}
+            >
               {isPlaying ? <FiPlayCircle /> : <FiPauseCircle />}
             </button>
             <Link href="https://saweria.co/miii" target="_blank">
