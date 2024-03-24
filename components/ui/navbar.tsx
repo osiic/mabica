@@ -17,9 +17,9 @@ export function Navbar() {
 
   useEffect(() => {
     const newAudio = new Audio("/bgm.mp3");
-    setAudio(newAudio); // Set the audio object when component mounts
+    setAudio(newAudio);
     return () => {
-      newAudio.play(); // Pause audio when component unmounts
+      newAudio.pause();
     };
   }, []);
 
@@ -45,7 +45,6 @@ export function Navbar() {
       }
     }
 
-    // Change the state of song
     setIsPlaying(!isPlaying);
   };
 
