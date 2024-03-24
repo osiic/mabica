@@ -8,11 +8,27 @@ import {
   FiX,
 } from "react-icons/fi";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
-  const [navbar, setNavbar] = useState(false);
-  const [audio, setAudio] = useState(false);
+  const [navbar, setNavbar] = useState<boolean>(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+
+  useEffect(() => {
+    const newAudio = new Audio("/bgm.mp3");
+    setAudio(newAudio); // Set the audio object when component mounts
+    return () => {
+      newAudio.pause(); // Pause audio when component unmounts
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isPlaying && audio) {
+      audio.play();
+      audio.volume = 0.4;
+    }
+  }, [isPlaying, audio]);
 
   function navbarOpen() {
     setNavbar(true);
@@ -22,12 +38,16 @@ export function Navbar() {
     setNavbar(false);
   }
 
-  function audioPlay() {
-    setAudio(true);
-  }
-  function audioPause() {
-    setAudio(false);
-  }
+  const playPause = () => {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+
+    // Change the state of song
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <>
@@ -61,10 +81,6 @@ export function Navbar() {
         </div>
       </section>
 
-      <audio autoPlay loop muted={audio}>
-        <source src="/bgm.mp3" type="audio/mpeg" />
-      </audio>
-
       <section className="sticky right-0 top-0  left-0 z-20">
         <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
           <button onClick={navbarOpen}>
@@ -72,12 +88,8 @@ export function Navbar() {
           </button>
 
           <div className="flex gap-2">
-            <button className="animate-spin-slow text-xl">
-              {audio ? (
-                <FiPlayCircle onClick={audioPause} id="song-pause" />
-              ) : (
-                <FiPauseCircle onClick={audioPlay} id="song-play" />
-              )}
+            <button onClick={playPause} className="animate-spin-slow text-xl">
+              {isPlaying ? <FiPlayCircle /> : <FiPauseCircle />}
             </button>
             <Link href="https://saweria.co/miii" target="_blank">
               <FiGift />
