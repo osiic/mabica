@@ -19,7 +19,7 @@ export function Navbar() {
     const newAudio = new Audio("/bgm.mp3");
     setAudio(newAudio); // Set the audio object when component mounts
     return () => {
-      newAudio.pause(); // Pause audio when component unmounts
+      newAudio.play(); // Pause audio when component unmounts
     };
   }, []);
 
