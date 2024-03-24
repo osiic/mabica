@@ -25,8 +25,10 @@ export function Navbar() {
 
   useEffect(() => {
     if (isPlaying && audio) {
-      audio.play();
-      audio.volume = 0.4;
+      if (audio !== null) {
+        audio.play();
+        audio.volume = 0.4;
+      }
     }
   }, [isPlaying, audio]);
 
