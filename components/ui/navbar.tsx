@@ -71,9 +71,9 @@ export function Navbar() {
       </section>
 
       <section
-        className={`top-0 w-screen z-30 -mb-[100dvh] ${navbar ? "fixed" : "hidden"} lg:w-fit bg-pink-300 lg:block lg:sticky `}
+        className={`fixed top-0  w-screen z-30 -mb-[100dvh] ${navbar ? "block" : "hidden"} lg:w-fit bg-pink-300 lg:block lg:max-h- lg:sticky `}
       >
-        <div className=" h-[100dvh] w-full py-5 lg:pl-[7%] bg-white lg:h-[100dvh] lg:w-52">
+        <div className=" h-[100dvh] w-full py-5 lg:pl-[7%] bg-white lg:h-[90vh] lg:w-52">
           <button onClick={openClose}>
             <FiX className="absolute right-[7%] mt-5 mr-5 lg:hidden  text-3xl" />
           </button>

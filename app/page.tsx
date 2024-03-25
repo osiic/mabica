@@ -59,9 +59,7 @@ export default function PageHome() {
           <h2 className="font-semibold text-xl text-right lg:text-left lg:text-3xl lg:mb-4 mb-2">
             #Team
           </h2>
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-4">
-            <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
-            <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+          <div className="grid grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
@@ -110,14 +108,16 @@ export default function PageHome() {
       </section>
 
       <footer className="px-[7%] text-center  pb-5 pt-5" id="footer">
-        <div className="space-x-1 text-black/90" id="footer">
-          <Link href="/">Informasi Bisnis</Link>
-          <span>l</span>
-          <Link href="/">Kebijakan Privasi</Link>
+        <div className="lg:pl-56">
+          <div className="space-x-1 text-black/90" id="footer">
+            <Link href="/">Informasi Bisnis</Link>
+            <span>l</span>
+            <Link href="/">Kebijakan Privasi</Link>
+          </div>
+          <span className="text-sm font-light text-black">
+            Copyright © 2024 Mabica
+          </span>
         </div>
-        <span className="text-sm font-light text-black">
-          Copyright © 2024 Mabica
-        </span>
       </footer>
     </div>
   );
