@@ -49,15 +49,36 @@ export function Navbar() {
 
   return (
     <>
-      <section
-        className={` left-0 bottom-0 top-0 right-0 z-30 ${navbar ? "fixed" : "hidden"} `}
-      >
-        <div className=" h-full bg-white w-full px-[7%] py-5">
+      <section className="sticky right-0 top-0 lg:z-40 left-0 z-20">
+        <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
+          <span className="hidden lg:block text-3xl font-semibold">Mubica</span>
           <button onClick={openClose}>
-            <FiX className="absolute right-[7%] mt-5 mr-5 md:hidden  text-3xl" />
+            <FiAlignLeft className="text-2xl lg:hidden" />
+          </button>
+
+          <div className="flex gap-2 lg:text-2xl">
+            <button
+              onClick={playPause}
+              className={`${isPlaying && "animate-spin-slow"} lg:text-2xl text-xl`}
+            >
+              {isPlaying ? <FiPlayCircle /> : <FiPauseCircle />}
+            </button>
+            <Link href="https://saweria.co/miii" target="_blank">
+              <FiGift />
+            </Link>
+          </div>
+        </nav>
+      </section>
+
+      <section
+        className={`top-0 w-screen z-30 -mb-[100dvh] ${navbar ? "fixed" : "hidden"} lg:w-fit bg-pink-300 lg:block lg:sticky `}
+      >
+        <div className=" h-[100dvh] w-full py-5 lg:pl-[7%] bg-white lg:h-[100dvh] lg:w-52">
+          <button onClick={openClose}>
+            <FiX className="absolute right-[7%] mt-5 mr-5 lg:hidden  text-3xl" />
           </button>
           <div className="flex h-full ">
-            <div className="m-auto flex flex-col font-light text-4xl gap-3">
+            <div className="m-auto flex flex-col font-light text-4xl lg:text-xl lg:gap-2 gap-3">
               <Link onClick={openClose} href="#" className="navbar">
                 Home
               </Link>
@@ -73,26 +94,6 @@ export function Navbar() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="sticky right-0 top-0  left-0 z-20">
-        <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
-          <button onClick={openClose}>
-            <FiAlignLeft className="text-2xl md:hidden" />
-          </button>
-
-          <div className="flex gap-2">
-            <button
-              onClick={playPause}
-              className={`${isPlaying && "animate-spin-slow"} text-xl`}
-            >
-              {isPlaying ? <FiPlayCircle /> : <FiPauseCircle />}
-            </button>
-            <Link href="https://saweria.co/miii" target="_blank">
-              <FiGift />
-            </Link>
-          </div>
-        </nav>
       </section>
     </>
   );
