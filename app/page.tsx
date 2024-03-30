@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/ui/navbar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function PageHome() {
@@ -60,7 +61,16 @@ export default function PageHome() {
             #Team
           </h2>
           <div className="grid grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
-            <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
+            <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] object-cover lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-md">
+              <Image
+                src="/templet.webp"
+                alt="image"
+                width={500}
+                height={800}
+                className="object-fill w-full h-full
+                hover:scale-110"
+              />
+            </div>
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
             <div className="hover:bg-black/60 overflow-clip bg-black/10 duration-300 transition aspect-[7/16] lg:aspect-[10/16] rounded-tr-xl rounded-bl-xl shadow-black/25 shadow-sm"></div>
