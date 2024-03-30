@@ -13,7 +13,7 @@ export default async function Page() {
         // </div>
       }
       <div className="flex w-full px-[7%] max-w-5xl justify-between items-center">
-        <Link href="/">Home</Link>
+        <Link href="/">Back in Home</Link>
         <UserButton />
       </div>
       <UserProfile />
