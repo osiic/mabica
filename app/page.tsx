@@ -1,10 +1,20 @@
 import { Navbar } from "@/components/ui/navbar";
 import Image from "next/image";
 import Link from "next/link";
+import { auth } from "@clerk/nextjs/server";
 
 export default function PageHome() {
+  const { userId } = auth();
   return (
     <div className="min-w-screen-md mx-auto">
+      {!!userId && (
+        <Link
+          className="fixed z-50 right-2 bottom-5 border hover:bg-black hover:text-white transition delay-300 border-black px-4 py-1 rounded "
+          href="/admin"
+        >
+          Admin
+        </Link>
+      )}
       <section className="flex h-[100dvh] justify-center items-center font-semibold text-4xl lg:text-5xl">
         <h1>mabica</h1>
       </section>
