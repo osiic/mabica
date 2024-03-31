@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Mabica",
   description: "just",
 };
-
+export const dynamic = "force-dynamic";
 export default function RootLayout({
   children,
 }: Readonly<{
