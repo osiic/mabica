@@ -49,9 +49,9 @@ export function Navbar() {
 
   return (
     <>
-      <section className="sticky right-0 top-0 lg:z-40 left-0 z-20">
-        <nav className="flex justify-between items-center text-lg font-light px-[7%] py-5 bg-white bg-blend-color-burn">
-          <span className="hidden lg:block text-3xl font-semibold">Mubica</span>
+      <section className="sticky left-0 right-0 top-0 z-20 lg:z-40">
+        <nav className="flex items-center justify-between bg-white px-[7%] py-5 text-lg font-light bg-blend-color-burn">
+          <span className="hidden text-3xl font-semibold lg:block">Mubica</span>
           <button onClick={openClose}>
             <FiAlignLeft className="text-2xl lg:hidden" />
           </button>
@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="flex gap-2 lg:text-2xl">
             <button
               onClick={playPause}
-              className={`${isPlaying && "animate-spin-slow"} lg:text-2xl text-xl`}
+              className={`${isPlaying && "animate-spin-slow"} text-xl lg:text-2xl`}
             >
               {isPlaying ? <FiPlayCircle /> : <FiPauseCircle />}
             </button>
@@ -71,14 +71,14 @@ export function Navbar() {
       </section>
 
       <section
-        className={`fixed top-0  w-screen z-30 -mb-[100dvh] ${navbar ? "block" : "hidden"} lg:w-fit bg-pink-300 lg:block lg:max-h- lg:sticky `}
+        className={`fixed top-0  z-30 -mb-[100dvh] w-screen ${navbar ? "block" : "hidden"} lg:max-h- bg-pink-300 lg:sticky lg:block lg:w-fit `}
       >
-        <div className=" h-[100dvh] w-full py-5 lg:pl-[7%] bg-white lg:h-[90vh] lg:w-52">
+        <div className=" h-[100dvh] w-full bg-white py-5 lg:h-[90vh] lg:w-52 lg:pl-[7%]">
           <button onClick={openClose}>
-            <FiX className="absolute right-[7%] mt-5 mr-5 lg:hidden  text-3xl" />
+            <FiX className="absolute right-[7%] mr-5 mt-5 text-3xl  lg:hidden" />
           </button>
           <div className="flex h-full ">
-            <div className="m-auto flex flex-col font-light text-4xl lg:text-xl lg:gap-2 gap-3">
+            <div className="m-auto flex flex-col gap-3 text-4xl font-light lg:gap-2 lg:text-xl">
               <Link onClick={openClose} href="#" className="navbar">
                 Home
               </Link>

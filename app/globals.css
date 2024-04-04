@@ -76,5 +76,5 @@
 }
 
 root#about-us {
-  @apply font-semibold after:content-['.'] after:ml-0.5 after:text-6xl;
+  @apply font-semibold after:ml-0.5 after:text-6xl after:content-['.'];
 }
