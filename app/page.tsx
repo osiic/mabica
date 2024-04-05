@@ -9,7 +9,7 @@ export default async function PageHome() {
   const dataTeam = await req.json()
 
   return (
-    <div className="min-w-screen-md mx-auto">
+    <div className="min-w-screen-md mx-auto lg:overflow-y-scroll lg:h-screen lg:snap-y snap-mandatory">
       {!!userId && (
         <Link
           className="fixed bottom-5 right-2 z-50 rounded border border-black px-4 py-1 transition delay-300 hover:bg-black hover:text-white "
@@ -18,14 +18,14 @@ export default async function PageHome() {
           Profile
         </Link>
       )}
-      <section className="flex h-[100dvh] items-center justify-center text-4xl font-semibold lg:text-5xl">
+      <section className="flex h-[100dvh] lg:snap-start items-center justify-center text-4xl font-semibold lg:text-5xl">
         <h1>mabica</h1>
       </section>
 
       <Navbar />
 
       <section
-        className="flex flex-col px-[7%] pb-5 pt-2 lg:h-screen"
+        className="flex flex-col px-[7%] snap-start pb-5 pt-20 lg:pt-2 lg:h-screen"
         id="about-us"
       >
         <div className="my-auto lg:pl-56">
@@ -66,7 +66,7 @@ export default async function PageHome() {
       </section>
 
       <section
-        className="flex flex-col px-[7%] pb-5 pt-5 lg:min-h-screen  "
+        className="flex lg:snap-start flex-col px-[7%] pb-5 pt-20 lg:pt-5 lg:min-h-screen  "
         id="team"
       >
         <div className="my-auto flex flex-col py-5 lg:py-20 lg:pl-56  ">
@@ -98,7 +98,7 @@ export default async function PageHome() {
       </section>
 
       <section
-        className="px-[7%] pb-5 pt-5 lg:flex lg:h-screen"
+        className="px-[7%] lg:snap-start pb-5 lg:pt-5 lg:flex lg:h-screen"
         id="social-media"
       >
         <div className="my-auto flex w-full flex-col justify-between py-20 lg:pl-56 ">
@@ -128,7 +128,7 @@ export default async function PageHome() {
         </div>
       </section>
 
-      <footer className="px-[7%] pb-5  pt-5 text-center" id="footer">
+      <footer className="px-[7%] lg:snap-start pb-5 pt-5 text-center" id="footer">
         <div className="lg:pl-56">
           <div className="space-x-1 text-black/90" id="footer">
             <Link href="/">Informasi Bisnis</Link>
