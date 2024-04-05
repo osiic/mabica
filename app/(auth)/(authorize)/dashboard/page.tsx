@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default async function Page() {
   return (
-    <div className="flex min-h-screen py-10 gap-4 flex-col justify-center items-center">
-      <div className="flex w-full px-[7%] max-w-5xl justify-between items-center">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 py-10">
+      <div className="flex w-full max-w-5xl items-center justify-between px-[7%]">
         <div className="space-x-2">
           <Link href="/">Back in Home</Link>
           <Link
-            className=" border hover:bg-black hover:text-white transition delay-300 border-black px-4 py-1 rounded "
+            className=" rounded border border-black px-4 py-1 transition delay-300 hover:bg-black hover:text-white "
             href="/profile"
           >
             Profile
