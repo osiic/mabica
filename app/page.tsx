@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 
-export default function PageHome() {
+export default async function PageHome() {
   const { userId } = auth();
+  const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/users`, { cache: 'no-cache' })
+  const dataTeam = await req.json()
+
   return (
     <div className="min-w-screen-md mx-auto">
       {!!userId && (
@@ -71,21 +74,19 @@ export default function PageHome() {
             #Team
           </h2>
           <div className="grid grid-cols-3 gap-2 lg:grid-cols-5 lg:gap-4">
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 object-cover shadow-md shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]">
-              <Image
-                src="/templet.webp"
-                alt="image"
-                width={500}
-                height={800}
-                className="h-full w-full object-fill
+            {dataTeam?.data.map((item: any, index: string) => (
+              <div key={index} className="cursor-pointer aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-md shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]">
+                <Image
+                  src={item?.image_url}
+                  alt={item?.first_name}
+                  width={800}
+                  height={800}
+                  className="h-full w-full transition duration-300 object-cover
                 hover:scale-110"
-              />
-            </div>
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-sm shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]"></div>
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-sm shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]"></div>
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-sm shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]"></div>
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-sm shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]"></div>
-            <div className="aspect-[7/16] overflow-clip rounded-bl-xl rounded-tr-xl bg-black/10 shadow-sm shadow-black/25 transition duration-300 hover:bg-black/60 lg:aspect-[10/16]"></div>
+                />
+              </div>
+
+            ))}
           </div>
           <Link
             href="/team"
