@@ -19,7 +19,6 @@ export default async function RootLayout({
     );
     const { data } = await res.json();
 
-    console.log(data)
     // jika status nya tidak ada kembalikan not founs
     if (data?.status === "member") {
       return (
