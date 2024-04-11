@@ -25,12 +25,12 @@ export default function SocialMedia() {
           <div className="">
             <span className=" text-3xl font-light">We are</span>
             <h2 className="-mt-2 mb-2 text-6xl ">Mabica</h2>
-            <q className="mb-5 max-w-[80%] text-lg lg:mb-12 ">
+            <q className="max-w-[80%] text-lg ">
               Kebahagiaan akan selalu datang di tengah kebersamaan. Apa pun itu,
               lakukanlah bersama-sama. Hidup ceria dan bahagia ketika senyum
               bersama.
             </q>
-            <div className="flex gap-2 text-2xl lg:gap-3">
+            <div className="mt-5 flex gap-2  text-2xl lg:mt-12 lg:gap-3">
               <Link href="https://instagram.com">
                 <SiInstagram />
               </Link>
