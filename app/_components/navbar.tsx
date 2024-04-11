@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export function Navbar() {
+export default function Navbar() {
   const [navbar, setNavbar] = useState<boolean>(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -79,7 +79,7 @@ export function Navbar() {
           </button>
           <div className="flex h-full ">
             <div className="m-auto flex flex-col gap-3 text-4xl font-light lg:gap-2 lg:text-xl">
-              <Link onClick={openClose} href="#" className="navbar">
+              <Link onClick={openClose} href="#home" className="navbar">
                 Home
               </Link>
               <Link onClick={openClose} href="#about-us" className="navbar">
