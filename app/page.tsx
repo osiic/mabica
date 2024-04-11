@@ -11,7 +11,7 @@ export default async function PageHome() {
   const dataTeam = await req.json();
 
   return (
-    <div className="min-w-screen-md mx-auto h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
+    <div className="min-w-screen-md mx-auto h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth dark:bg-[#121212] dark:text-white">
       {!!userId && (
         <Link
           className="fixed bottom-5 right-2 z-50 rounded border border-black px-4 py-1 transition delay-300 hover:bg-black hover:text-white "
@@ -100,16 +100,17 @@ export default async function PageHome() {
 
       <SocialMedia />
 
-      <footer className="snap-start px-[7%] pb-5 pt-5 text-center" id="footer">
+      <footer
+        className="snap-start px-[7%] pb-5 pt-5 text-center dark:text-white"
+        id="footer"
+      >
         <div className="lg:pl-56">
-          <div className="space-x-1 text-black/90" id="footer">
+          <div className="space-x-1" id="footer">
             <Link href="/">Informasi Bisnis</Link>
             <span>l</span>
             <Link href="/">Kebijakan Privasi</Link>
           </div>
-          <span className="text-sm font-light text-black">
-            Copyright © 2024 Mabica
-          </span>
+          <span className="text-sm font-light ">Copyright © 2024 Mabica</span>
         </div>
       </footer>
     </div>

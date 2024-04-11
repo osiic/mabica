@@ -10,13 +10,7 @@ export const metadata: Metadata = {
   title: "Mabica",
   description: `Mabica (Mari Bikin Cerita) adalah perkumpulan orang gabut yang mungkin membuat cerita supaya tidak "rin udah makan" atau "sehat?" saat bermain discord.`,
   icons: {
-    icon: '/mabica-icon.png',
-    shortcut: '/mabica-icon.png',
-    apple: '/mabica-icon.png',
-    other: {
-      rel: 'mabica-icon',
-      url: '/mabica-icon.png',
-    },
+    icon: "/mabica-icon.png",
   },
 };
 
@@ -28,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark ">
       <body className={inter.className}>{children}</body>
     </html>
   );

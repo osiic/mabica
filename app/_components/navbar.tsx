@@ -49,8 +49,8 @@ export default function Navbar() {
 
   return (
     <>
-      <section className="sticky left-0 right-0 top-0 z-20 lg:z-40">
-        <nav className="flex items-center justify-between bg-white px-[7%] py-5 text-lg font-light bg-blend-color-burn">
+      <section className="sticky left-0 right-0 top-0 z-20 lg:z-40 dark:bg-[#121212]  ">
+        <nav className="flex items-center justify-between px-[7%] py-5 text-lg font-light bg-blend-color-burn">
           <span className="hidden text-3xl font-semibold lg:block">Mubica</span>
           <button onClick={openClose}>
             <FiAlignLeft className="text-2xl lg:hidden" />
@@ -71,9 +71,9 @@ export default function Navbar() {
       </section>
 
       <section
-        className={`fixed top-0  z-30 -mb-[100dvh] w-screen ${navbar ? "block" : "hidden"} lg:max-h- bg-pink-300 lg:sticky lg:block lg:w-fit `}
+        className={`fixed top-0  z-30 -mb-[100dvh] w-screen ${navbar ? "block" : "hidden"} dark:bg-[#121212]  lg:max-h- lg:sticky lg:block lg:w-fit `}
       >
-        <div className=" h-[100dvh] w-full bg-white py-5 lg:h-[90vh] lg:w-52 lg:pl-[7%]">
+        <div className=" h-[100dvh] w-full py-5 lg:h-[90vh] lg:w-52 lg:pl-[7%]">
           <button onClick={openClose}>
             <FiX className="absolute right-[7%] mr-5 mt-5 text-3xl  lg:hidden" />
           </button>
